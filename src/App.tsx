@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, ChangeEvent } from "react";
 import CardList from "./components/card-list/card-list.component";
 import SearchBox from "./components/search-box/search-box.component";
 import "./App.css";
@@ -35,7 +35,7 @@ const App = () => {
     setFilterMonsters(newFilteredMonsters);
   }, [monsters, searchField]);
 
-  const onSearchChange = (event) => {
+  const onSearchChange = (event: ChangeEvent<HTMLInputElement>): void => {
     const searchFieldString = event.target.value.toLocaleLowerCase();
 
     setSearchField(searchFieldString);
